@@ -750,6 +750,24 @@ public class NachoTextView extends MultiAutoCompleteTextView implements TextWatc
         endUnwatchedTextChange();
     }
 
+    public void addTextWithChips(@Nullable List<ChipInfo> chips) {
+        if (mChipTokenizer == null) {
+            return;
+        }
+        beginUnwatchedTextChange();
+
+        Editable text = getText();
+
+        if (chips != null) {
+            for (ChipInfo chipInfo : chips) {
+                CharSequence chippedText = mChipTokenizer.terminateToken(chipInfo.getText(), chipInfo.getData());
+                text.append(chippedText);
+            }
+        }
+        setSelection(text.length());
+        endUnwatchedTextChange();
+    }
+
     public void setTextWithChips(@Nullable List<ChipInfo> chips) {
         if (mChipTokenizer == null) {
             return;
