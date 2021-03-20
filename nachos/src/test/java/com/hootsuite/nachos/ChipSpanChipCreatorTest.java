@@ -16,7 +16,7 @@ import org.robolectric.annotation.Config;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(CustomRobolectricRunner.class)
-@Config(constants = BuildConfig.class)
+@Config()
 public class ChipSpanChipCreatorTest extends TestCase {
 
     private static final String SAMPLE_TEXT = "abcde";

@@ -33,7 +33,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(CustomRobolectricRunner.class)
-@Config(constants = BuildConfig.class)
+@Config()
 public class SpanChipTokenizerTest extends TestCase {
 
     private static final CharSequence EMPTY_STRING = "";

@@ -1,7 +1,7 @@
 package com.hootsuite.nachos;
 
 import org.junit.runners.model.InitializationError;
-import org.robolectric.RobolectricGradleTestRunner;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 import org.robolectric.manifest.AndroidManifest;
 import org.robolectric.res.Fs;
@@ -14,7 +14,7 @@ import org.robolectric.res.Fs;
  *
  * Follow this issue at https://code.google.com/p/android/issues/detail?id=158015
  */
-public class CustomRobolectricRunner extends RobolectricGradleTestRunner {
+public class CustomRobolectricRunner extends RobolectricTestRunner {
 
     private static final int MAX_SDK_SUPPORTED_BY_ROBOLECTRIC = 21;
 
@@ -22,7 +22,6 @@ public class CustomRobolectricRunner extends RobolectricGradleTestRunner {
         super(testClass);
     }
 
-    @Override
     protected AndroidManifest getAppManifest(Config config) {
         String manifestProperty = "src/main/AndroidManifest.xml";
         String resProperty = "src/main/res";
