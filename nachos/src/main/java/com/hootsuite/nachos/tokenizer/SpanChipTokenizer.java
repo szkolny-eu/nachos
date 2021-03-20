@@ -168,6 +168,8 @@ public class SpanChipTokenizer<C extends Chip> implements ChipTokenizer {
     }
 
     private CharSequence terminateToken(C chip) {
+        if (chip == null)
+            return new SpannableString("");
         // Surround the text with CHIP_SPAN_SEPARATOR and spaces
         // The spaces allow autocorrect to correctly identify words
         String chipSeparator = Character.toString(CHIP_SPAN_SEPARATOR);
